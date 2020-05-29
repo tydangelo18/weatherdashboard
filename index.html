@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Today's Forecast</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <form id="search">
+      <label for="weather-input">Find A City!</label>
+
+      <br />
+
+      <input type="text" id="weather-input" />
+
+      <input id="weather-button" type="submit" value="search." />
+    </form>
+
+    <div id="weather">
+      <div id="city" class="row">
+        <div class="col-md-1"></div>
+      </div>
+      <div id="date" class="row">
+        <div class="col-md-1"></div>
+      </div>
+      <div id="temp" class="row">
+        <div class="col-md-1"></div>
+      </div>
+      <div id="humid" class="row">
+        <div class="col-md-1"></div>
+      </div>
+      <div id="wind" class="row">
+        <div class="col-md-1"></div>
+      </div>
+      <div id="forecast" class="row">
+        <div class="col-md-1"></div>
+      </div>
+      <div id="weatherCard" class="row">
+        <div id="dayOne" class="col-md-1"></div>
+        <div id="dayTwo" class="col-md-1"></div>
+        <div id="dayThree" class="col-md-1"></div>
+        <div id="dayFour" class="col-md-1"></div>
+        <div id="dayFive" class="col-md-1"></div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

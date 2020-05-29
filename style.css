@@ -1,0 +1,82 @@
+#weather {
+  border: solid 1px black;
+  background-color: #0fbff0;
+  opacity: 0.85em;
+  height: 685px;
+  width: 1000px;
+  margin-left: 325px;
+  margin-right: 100px;
+}
+
+#city,
+#temp,
+#humid,
+#wind {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 0px;
+  margin-top: 30px;
+}
+
+#date {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 0px;
+  margin-top: 10px;
+}
+
+#forecast {
+  margin-top: 50px;
+}
+
+#weather-button {
+  border-radius: 1em 1em 1em 1em;
+  color: black;
+  font-weight: bold;
+  background-color: #0ae706;
+  border: 2px solid black;
+  margin-left: 4px;
+}
+
+#weather-input {
+  border: 3px solid black;
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+label {
+  font-weight: bold;
+  margin-left: 6px;
+  font-size: 35px;
+}
+
+#weatherCard {
+  margin-left: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+#dayOne {
+  border: 3px solid black;
+  height: 200px;
+}
+
+#dayTwo {
+  border: 3px solid black;
+  height: 200px;
+}
+
+#dayThree {
+  border: 3px solid black;
+  height: 200px;
+}
+
+#dayFour {
+  border: 3px solid black;
+  height: 200px;
+}
+
+#dayFive {
+  border: 3px solid black;
+  height: 200px;
+}

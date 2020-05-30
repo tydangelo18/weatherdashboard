@@ -1,12 +1,20 @@
+#search {
+  background-color: black;
+}
+
+label {
+  color: white;
+}
+
 #weather {
   border: solid 1px black;
   background-color: #0fbff0;
   opacity: 0.85em;
-  height: 750px;
+  height: 725px;
   width: 1400px;
-  margin-left: 300px;
-  margin-right: 100px;
+  margin-left: 20px;
   border-radius: 2em 2em 2em 2em;
+  margin-top: 10px;
 }
 
 #city,
@@ -54,7 +62,7 @@ label {
 #fiveDayForecast {
   display: flex;
   justify-content: space-between;
-  margin-top: 10px;
+  margin-top: 0px;
 }
 
 #dayOne,
@@ -65,4 +73,24 @@ label {
   border: 2px solid black;
   background-color: #0ae706;
   border-radius: 0em 0em 2em 2em;
+}
+
+#savedCity {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#cityOne,
+#cityTwo,
+#cityThree,
+#cityFour,
+#cityFive,
+#citySix,
+#citySeven,
+#cityEight,
+#cityNine,
+#cityTen {
+  border: 1px solid black;
+  width: 100px;
+  background-color: #0ae706;
 }

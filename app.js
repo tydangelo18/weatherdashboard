@@ -1,7 +1,10 @@
 // Call the API
-function searchCity() {
-  let queryURL =
-    "https://api.openweathermap.org/data/2.5/weather?q=Austin&appid=def8b41b43fe3f2e5dff96db885a6932";
+$("#weather-button").on("click", function (event) {
+  event.preventDefault();
+
+  let city = $("#weather-input").val();
+
+  let queryURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=def8b41b43fe3f2e5dff96db885a6932`;
 
   $.ajax({
     url: queryURL,
@@ -235,11 +238,4 @@ function searchCity() {
     .catch(function (err) {
       console.log(err);
     });
-}
-
-$("#weather-button").on("click", function (event) {
-  event.preventDefault();
-  let inputCity = $("#weather-input").val().trim();
-
-  searchCity(inputCity);
 });

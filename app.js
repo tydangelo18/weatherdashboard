@@ -2,22 +2,30 @@
 $("#weather-button").on("click", function (event) {
   event.preventDefault();
 
+  // Declare a variable for any city inserted into the search bar
   let city = $("#weather-input").val();
 
+  // Save recent searches to local storage
+  localStorage.setItem("savedCity", JSON.stringify(city));
+
+  // Grab city from local storage
+  let recentCity = $("<p>").text(JSON.parse(localStorage.getItem("savedCity")));
+
+  // Append the most recent searched city into Recent Container in HTML
+  $("#cityOne").append(recentCity);
+
+  // OpenWeather API URL & API Key
   let queryURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=def8b41b43fe3f2e5dff96db885a6932`;
 
+  // AJAX Call for the API
   $.ajax({
     url: queryURL,
     method: "GET",
   })
     .then(function (response) {
-      // Print the object to the console to test the functionality of the API
-      console.log(response);
-
       let weatherCity = $("<h1>").text(response.name);
 
-      console.log(response.name);
-
+      // Moment.js
       let m = moment();
 
       let forecastMoment1 = moment().add(1, "days");
@@ -28,23 +36,21 @@ $("#weather-button").on("click", function (event) {
 
       let weatherDate = $("<h1>").text(m.format("L"));
 
-      console.log(m.format("L"));
-
       let weatherTemp = $("<h4>").text(
-        "Temperature: " + response.main.temp + " Kelvin"
+        "Temperature: " +
+          Math.round(((response.main.temp - 273.15) * 9) / 5 + 32) +
+          " °F"
       );
-      console.log(response.main.temp); // Convert to Farenheit
 
       let weatherHumidity = $("<h4>").text(
         `Humidity: ${response.main.humidity}%`
       );
-      console.log(response.main.humidity + "%");
 
       let weatherWind = $("<h4>").text(
         `Wind Speed: ${response.wind.speed} MPH`
       );
-      console.log(`${response.wind.speed} MPH`);
 
+      // Moment.js
       let foreCast = $("<h2>").text("5-Day Forecast");
 
       let forecastDate1 = $("<h5>").text(forecastMoment1.format("L"));
@@ -53,6 +59,9 @@ $("#weather-button").on("click", function (event) {
       let forecastDate4 = $("<h5>").text(forecastMoment4.format("L"));
       let forecastDate5 = $("<h5>").text(forecastMoment5.format("L"));
 
+      // Append Each API object into HTML
+
+      $("#city").empty();  
       $("#city").append(weatherCity);
       $("#date").append(weatherDate);
       $("#temp").append(weatherTemp);
@@ -66,13 +75,15 @@ $("#weather-button").on("click", function (event) {
       $("#dayFiveDate").append(forecastDate5);
     })
 
+    // Catch Errors if API doesn't run
     .catch(function (err) {
       console.log(err);
     });
 
-  let queryURL2 =
-    "https://api.openweathermap.org/data/2.5/forecast?q=Austin&appid=def8b41b43fe3f2e5dff96db885a6932";
+  // OpenWeather 5-Day Forecast API URL & API Key
+  let queryURL2 = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=def8b41b43fe3f2e5dff96db885a6932`;
 
+  // AJAX call for the API
   $.ajax({
     url: queryURL2,
     method: "GET",
@@ -81,123 +92,134 @@ $("#weather-button").on("click", function (event) {
       console.log(response);
       // Day 1
       let forecastMaxTemp1 = $("<p>").text(
-        "High: " + response.list[3].main.temp_max + "Kelvin"
+        "High: " +
+          Math.round(((response.list[3].main.temp_max - 273.15) * 9) / 5 + 32) +
+          " °F"
       );
-      console.log(response.list[3].main.temp_max);
 
       let forecastMinTemp1 = $("<p>").text(
-        "Low: " + response.list[3].main.temp_min + "Kelvin"
+        "Low: " +
+          Math.round(((response.list[3].main.temp_min - 273.15) * 9) / 5 + 32) +
+          " °F"
       );
-      console.log(response.list[3].main.temp_min);
 
       let forecastHumidity1 = $("<p>").text(
         "Humidity: " + response.list[3].main.humidity + "%"
       );
-      console.log(response.list[3].main.humidity);
 
       let forecastWind1 = $("<p>").text(
         "Wind Speed: " + response.list[3].wind.speed + "MPH"
       );
-      console.log(response.list[3].wind.speed);
 
       let forecastWeather1 = $("<p>").text(response.list[3].weather[0].main);
-      console.log(response.list[3].weather[0].main);
 
       // Day 2
       let forecastMaxTemp2 = $("<p>").text(
-        "High: " + response.list[11].main.temp_max + "Kelvin"
+        "High: " +
+          Math.round(
+            ((response.list[11].main.temp_max - 273.15) * 9) / 5 + 32
+          ) +
+          " °F"
       );
-      console.log(response.list[11].main.temp_max);
 
       let forecastMinTemp2 = $("<p>").text(
-        "Low: " + response.list[11].main.temp_min + "Kelvin"
+        "Low: " +
+          Math.round(
+            ((response.list[11].main.temp_min - 273.15) * 9) / 5 + 32
+          ) +
+          " °F"
       );
-      console.log(response.list[11].main.temp_min);
 
       let forecastHumidity2 = $("<p>").text(
         "Humidity: " + response.list[11].main.humidity + "%"
       );
-      console.log(response.list[11].main.humidity);
 
       let forecastWind2 = $("<p>").text(
         "Wind Speed: " + response.list[11].wind.speed + "MPH"
       );
-      console.log(response.list[11].wind.speed);
 
       let forecastWeather2 = $("<p>").text(response.list[11].weather[0].main);
-      console.log(response.list[11].weather[0].main);
 
       // Day 3
       let forecastMaxTemp3 = $("<p>").text(
-        "High: " + response.list[19].main.temp_max + "Kelvin"
+        "High: " +
+          Math.round(
+            ((response.list[19].main.temp_max - 273.15) * 9) / 5 + 32
+          ) +
+          " °F"
       );
-      console.log(response.list[19].main.temp_max);
 
       let forecastMinTemp3 = $("<p>").text(
-        "Low: " + response.list[19].main.temp_min + "Kelvin"
+        "Low: " +
+          Math.round(
+            ((response.list[19].main.temp_min - 273.15) * 9) / 5 + 32
+          ) +
+          " °F"
       );
-      console.log(response.list[19].main.temp_min);
 
       let forecastHumidity3 = $("<p>").text(
         "Humidity: " + response.list[19].main.humidity + "%"
       );
-      console.log(response.list[19].main.humidity);
 
       let forecastWind3 = $("<p>").text(
         "Wind Speed: " + response.list[19].wind.speed + "MPH"
       );
-      console.log(response.list[19].wind.speed);
 
       let forecastWeather3 = $("<p>").text(response.list[19].weather[0].main);
-      console.log(response.list[19].weather[0].main);
 
       // Day 4
       let forecastMaxTemp4 = $("<p>").text(
-        "High: " + response.list[27].main.temp_max + "Kelvin"
+        "High: " +
+          Math.round(
+            ((response.list[27].main.temp_max - 273.15) * 9) / 5 + 32
+          ) +
+          " °F"
       );
-      console.log(response.list[27].main.temp_max);
 
       let forecastMinTemp4 = $("<p>").text(
-        "Low: " + response.list[27].main.temp_min + "Kelvin"
+        "Low: " +
+          Math.round(
+            ((response.list[27].main.temp_min - 273.15) * 9) / 5 + 32
+          ) +
+          " °F"
       );
-      console.log(response.list[27].main.temp_min);
 
       let forecastHumidity4 = $("<p>").text(
         "Humidity: " + response.list[27].main.humidity + "%"
       );
-      console.log(response.list[27].main.humidity);
 
       let forecastWind4 = $("<p>").text(
         "Wind Speed: " + response.list[27].wind.speed + "MPH"
       );
-      console.log(response.list[27].wind.speed);
 
       let forecastWeather4 = $("<p>").text(response.list[27].weather[0].main);
-      console.log(response.list[27].weather[0].main);
 
       // Day 5
       let forecastMaxTemp5 = $("<p>").text(
-        "High: " + response.list[35].main.temp_max + "Kelvin"
+        "High: " +
+          Math.round(
+            ((response.list[35].main.temp_max - 273.15) * 9) / 5 + 32
+          ) +
+          " °F"
       );
-      console.log(response.list[35].main.temp_max);
 
       let forecastMinTemp5 = $("<p>").text(
-        "Low: " + response.list[35].main.temp_min + "Kelvin"
+        "Low: " +
+          Math.round(
+            ((response.list[35].main.temp_min - 273.15) * 9) / 5 + 32
+          ) +
+          " °F"
       );
-      console.log(response.list[35].main.temp_min);
 
       let forecastHumidity5 = $("<p>").text(
         "Humidity: " + response.list[35].main.humidity + "%"
       );
-      console.log(response.list[35].main.humidity);
 
       let forecastWind5 = $("<p>").text(
         "Wind Speed: " + response.list[35].wind.speed + "MPH"
       );
-      console.log(response.list[35].wind.speed);
 
       let forecastWeather5 = $("<p>").text(response.list[35].weather[0].main);
-      console.log(response.list[35].weather[0].main);
 
       // Day 1
       $("#dayOneMax").append(forecastMaxTemp1);

@@ -1,3 +1,15 @@
+function clear(ids) {
+  for (const id of ids) {
+    $("#" + id).empty();
+  }
+}
+
+function writeHTML(obj, method) {
+  for (const id in obj) {
+    $("#" + id)[method](obj[id]);
+  }
+}
+
 // Call the API
 $("#weather-button").on("click", function (event) {
   event.preventDefault();
@@ -61,18 +73,22 @@ $("#weather-button").on("click", function (event) {
 
       // Append Each API object into HTML
 
-      $("#city").empty();  
-      $("#city").append(weatherCity);
-      $("#date").append(weatherDate);
-      $("#temp").append(weatherTemp);
-      $("#humid").append(weatherHumidity);
-      $("#wind").append(weatherWind);
-      $("#forecast").append(foreCast);
-      $("#dayOneDate").append(forecastDate1);
-      $("#dayTwoDate").append(forecastDate2);
-      $("#dayThreeDate").append(forecastDate3);
-      $("#dayFourDate").append(forecastDate4);
-      $("#dayFiveDate").append(forecastDate5);
+      const callObj = {
+        city: weatherCity,
+        date: weatherDate,
+        temp: weatherTemp,
+        humid: weatherHumidity,
+        wind: weatherWind,
+        forecast: foreCast,
+        dayOneDate: forecastDate1,
+        dayTwoDate: forecastDate2,
+        dayThreeDate: forecastDate3,
+        dayFourDate: forecastDate4,
+        dayFiveDate: forecastDate5,
+      };
+
+      clear(Object.keys(callObj));
+      writeHTML(callObj, "append");
     })
 
     // Catch Errors if API doesn't run
@@ -221,40 +237,36 @@ $("#weather-button").on("click", function (event) {
 
       let forecastWeather5 = $("<p>").text(response.list[35].weather[0].main);
 
-      // Day 1
-      $("#dayOneMax").append(forecastMaxTemp1);
-      $("#dayOneMin").append(forecastMinTemp1);
-      $("#dayOneHumidity").append(forecastHumidity1);
-      $("#dayOneWind").append(forecastWind1);
-      $("#dayOneWeather").append(forecastWeather1);
+      const forecastObj = {
+        dayOneMax: forecastMaxTemp1,
+        dayOneMin: forecastMinTemp1,
+        dayOneHumidity: forecastHumidity1,
+        dayOneWind: forecastWind1,
+        dayOneWeather: forecastWeather1,
+        dayTwoMax: forecastMaxTemp2,
+        dayTwoMin: forecastMinTemp2,
+        dayTwoHumidity: forecastHumidity2,
+        dayTwoWind: forecastWind2,
+        dayTwoWeather: forecastWeather2,
+        dayThreeMax: forecastMaxTemp3,
+        dayThreeMin: forecastMinTemp3,
+        dayThreeHumidity: forecastHumidity3,
+        dayThreeWind: forecastWind3,
+        dayThreeWeather: forecastWeather3,
+        dayFourMax: forecastMaxTemp4,
+        dayFourMin: forecastMinTemp4,
+        dayFourHumidity: forecastHumidity4,
+        dayFourWind: forecastWind4,
+        dayFourWeather: forecastWeather4,
+        dayFiveMax: forecastMaxTemp5,
+        dayFiveMin: forecastMinTemp5,
+        dayFiveHumidity: forecastHumidity5,
+        dayFiveWind: forecastWind5,
+        dayFiveWeather: forecastWeather5,
+      };
 
-      // Day 2
-      $("#dayTwoMax").append(forecastMaxTemp2);
-      $("#dayTwoMin").append(forecastMinTemp2);
-      $("#dayTwoHumidity").append(forecastHumidity2);
-      $("#dayTwoWind").append(forecastWind2);
-      $("#dayTwoWeather").append(forecastWeather2);
-
-      // Day 3
-      $("#dayThreeMax").append(forecastMaxTemp3);
-      $("#dayThreeMin").append(forecastMinTemp3);
-      $("#dayThreeHumidity").append(forecastHumidity3);
-      $("#dayThreeWind").append(forecastWind3);
-      $("#dayThreeWeather").append(forecastWeather3);
-
-      // Day 4
-      $("#dayFourMax").append(forecastMaxTemp4);
-      $("#dayFourMin").append(forecastMinTemp4);
-      $("#dayFourHumidity").append(forecastHumidity4);
-      $("#dayFourWind").append(forecastWind4);
-      $("#dayFourWeather").append(forecastWeather4);
-
-      // Day 5
-      $("#dayFiveMax").append(forecastMaxTemp5);
-      $("#dayFiveMin").append(forecastMinTemp5);
-      $("#dayFiveHumidity").append(forecastHumidity5);
-      $("#dayFiveWind").append(forecastWind5);
-      $("#dayFiveWeather").append(forecastWeather5);
+      clear(Object.keys(forecastObj));
+      writeHTML(forecastObj, "append");
     })
 
     .catch(function (err) {

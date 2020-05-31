@@ -12,9 +12,10 @@ label {
   opacity: 0.85em;
   height: 725px;
   width: 1400px;
-  margin-left: 20px;
+  margin: auto;
   border-radius: 2em 2em 2em 2em;
   margin-top: 10px;
+  padding: 20px 45px;
 }
 
 #city,
@@ -36,6 +37,7 @@ label {
 
 #forecast {
   margin-top: 50px;
+  margin-bottom: 5px;
 }
 
 #weather-button {

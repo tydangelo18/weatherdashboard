@@ -16,7 +16,7 @@ Tyler D'Angelo
 6. AJAX
 7. Open Weather API
 8. [Github](https://github.com/tydangelo18).
-9. [Github Pages]
+9. [Github Pages](https://tydangelo18.github.io/weatherdashboard/.)
 
 ### Application Features
 

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Today's Forecast</title>
+    <title>Forecast - Dashboard</title>
 
     <link rel="stylesheet" href="style.css" />
     <link
@@ -17,11 +17,12 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
 
   <body>
     <form id="search">
-      <label for="weather-input">Find A City!</label>
+      <label for="weather-input">Weather Dashboard</label>
 
       <br />
 
@@ -49,20 +50,22 @@
       <div id="city" class="row">
         <div class="col-md-1"></div>
       </div>
-      <div id="date" class="row">
-        <div class="col-md-1"></div>
-      </div>
-      <div id="temp" class="row">
-        <div class="col-md-1"></div>
-      </div>
-      <div id="humid" class="row">
-        <div class="col-md-1"></div>
-      </div>
-      <div id="wind" class="row">
-        <div class="col-md-1"></div>
-      </div>
-      <div id="forecast" class="row">
-        <div class="col-md-1"></div>
+      <div id="fiveDay">
+        <div id="date" class="row">
+          <div class="col-md-1"></div>
+        </div>
+        <div id="temp" class="row">
+          <div class="col-md-1"></div>
+        </div>
+        <div id="humid" class="row">
+          <div class="col-md-1"></div>
+        </div>
+        <div id="wind" class="row">
+          <div class="col-md-1"></div>
+        </div>
+        <div id="forecast" class="row">
+          <div class="col-md-1"></div>
+        </div>
       </div>
 
       <div id="weatherCard" class="container">

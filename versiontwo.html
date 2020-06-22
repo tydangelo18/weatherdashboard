@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather Sample</title>
 
+    <link rel="stylesheet" href="versiontwo.css">
+
     <!--Bulma CDN is easiest-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.2/css/bulma.css" />
 </head>
@@ -14,10 +16,17 @@
     <section>
         <header>
             <div class="block">
-                <h1 class="title is-2">Weather Dashboard</h1>
+                <div class="columns">
+                    <div class="column is-12" id="titleDiv">
+                        <h1 class="title is-2">Weather Dashboard</h1>
+                    </div>
+                   
+                </div>
             </div>
         </header>
     </section>
+
+    <br>
 
     <section>
         <!--Search Bar-->
@@ -27,7 +36,16 @@
                     <!--For Space-->
                 </div>
                 <div class="column is-4">
-                    <input class="input is-rounded" type="text" placeholder="Rounded input">
+                
+                        <form id="search">
+                            <label for="weather-input"></label>
+                               
+                            <input class="input" type="text" placeholder="choose a city..." id="weather-input" />
+
+                            <input id="weather-button" type="submit" value="search." />
+                                  
+                        </form>
+                
                 </div>
                 <div class="column is-4">
                     <!--For Space-->
@@ -40,22 +58,20 @@
 
     <section>
         <!--Main Weather Card-->
-        <div class="block">
+        <div class="block" id="weather">
             <div class="columns">
                 <div class="column is-3">
                     <!--For Space-->
                 </div>
                 <div class="column is-6">
                     <div class="card">
-                        <div class="card-content">
-                            <p class="title">
-                                “There are two hard things in computer science: cache invalidation, naming things, and
-                                off-by-one errors.”
-                            </p>
-                            <p class="subtitle">
-                                Jeff Atwood
-                            </p>
-                        </div>
+                        <h2 class="title is-3" id="city"></h2>
+                        <h2 class="title is-4" id="date"></h2>
+                        <h2 class="title is-5" id="temp"></h2>
+                        <h2 class="title is-5" id="humid"></h2>
+                        <h2 class="title is-5" id="wind"></h2>
+                        <h2 class="title is-5" id="forecast"></h2>
+
                     </div>
                 </div>
                 <div class="column is-3">
@@ -69,91 +85,59 @@
 
     <section>
         <!--5 day forecast Cards-->
-        <div class="block">
-            <div class="columns">
+        <div class="block" id="weatherCard">
+            <div class="columns" id="fiveDayForecast">
                 <div class="column is-1">
                     <!--For Space-->
                 </div>
-                <div class="column is-2">
-                    <div class="card">
-                        <img src="./assets/Profile Picture.JPG" alt="Tyler D'Angelo" style="width:100%">
-                        <h1 class="title is-4">Tyler D'Angelo</h1>
-                        <h1 class="title is-6">Full Stack Web Development Student</h1>
-                        <p id="email">tydangelo18@gmail.com</p>
-                        <p id="phone">(817) 271-4491</p>
-                        <a class="cardGithub" href="https://github.com/tydangelo18" target="null"><i
-                                class="fab fa-github"></i></a>
-                        <a class="cardLinkedIn" href="https://www.linkedin.com/in/tydangelo18" target="null"><i
-                                class="fab fa-linkedin-in"></i></a>
-                        <a href="https://drive.google.com/file/d/1r80-CwnW0dnZdNuhH2paMqWuASmBtCtQ/view?usp=sharing"
-                            target="null">
-                            <p><button>My Resume</button></p>
-                        </a>
+                <div class="column is-2" id="dayOne">
+                    <div class="card" id="cardOne">
+                        <h6 class="title is-5" id="dayOneDate"></h6>
+                        <h6 class="title is-6" id="dayOneMax"></h6>
+                        <h6 class="title is-6" id="dayOneMin"></h6>
+                        <h6 class="title is-6" id="dayOneHumidity"></h6>
+                        <h6 class="title is-6" id="dayOneWind"></h6>
+                        <h6 class="title is-6" id="dayOneWeather"></h6>
                     </div>
                 </div>
-                <div class="column is-2">
-                    <div class="card">
-                        <img src="./assets/Profile Picture.JPG" alt="Tyler D'Angelo" style="width:100%">
-                        <h1 class="title is-4">Tyler D'Angelo</h1>
-                        <h1 class="title is-6">Full Stack Web Development Student</h1>
-                        <p id="email">tydangelo18@gmail.com</p>
-                        <p id="phone">(817) 271-4491</p>
-                        <a class="cardGithub" href="https://github.com/tydangelo18" target="null"><i
-                                class="fab fa-github"></i></a>
-                        <a class="cardLinkedIn" href="https://www.linkedin.com/in/tydangelo18" target="null"><i
-                                class="fab fa-linkedin-in"></i></a>
-                        <a href="https://drive.google.com/file/d/1r80-CwnW0dnZdNuhH2paMqWuASmBtCtQ/view?usp=sharing"
-                            target="null">
-                            <p><button>My Resume</button></p>
-                        </a>
+                <div class="column is-2" id="dayTwo">
+                    <div class="card" id="cardTwo">
+                        <h6 class="title is-5" id="dayTwoDate"></h6>
+                        <h6 class="title is-6" id="dayTwoMax"></h6>
+                        <h6 class="title is-6" id="dayTwoMin"></h6>
+                        <h6 class="title is-6" id="dayTwoHumidity"></h6>
+                        <h6 class="title is-6" id="dayTwoWind"></h6>
+                        <h6 class="title is-6" id="dayTwoWeather"></h6>
                     </div>
                 </div>
-                <div class="column is-2">
-                    <div class="card">
-                        <img src="./assets/Profile Picture.JPG" alt="Tyler D'Angelo" style="width:100%">
-                        <h1 class="title is-4">Tyler D'Angelo</h1>
-                        <h1 class="title is-6">Full Stack Web Development Student</h1>
-                        <p id="email">tydangelo18@gmail.com</p>
-                        <p id="phone">(817) 271-4491</p>
-                        <a class="cardGithub" href="https://github.com/tydangelo18" target="null"><i
-                                class="fab fa-github"></i></a>
-                        <a class="cardLinkedIn" href="https://www.linkedin.com/in/tydangelo18" target="null"><i
-                                class="fab fa-linkedin-in"></i></a>
-                        <a href="https://drive.google.com/file/d/1r80-CwnW0dnZdNuhH2paMqWuASmBtCtQ/view?usp=sharing"
-                            target="null">
-                            <p><button>My Resume</button></p>
-                        </a>
+                <div class="column is-2" id="dayThree">
+                    <div class="card" id="cardThree">
+                        <h6 class="title is-5" id="dayThreeDate"></h6>
+                        <h6 class="title is-6" id="dayThreeMax"></h6>
+                        <h6 class="title is-6" id="dayThreeMin"></h6>
+                        <h6 class="title is-6" id="dayThreeHumidity"></h6>
+                        <h6 class="title is-6" id="dayThreeWind"></h6>
+                        <h6 class="title is-6" id="dayThreeWeather"></h6>
                     </div>
                 </div>
-                <div class="column is-2">
-                    <div class="card">
-                        <img src="./assets/Profile Picture.JPG" alt="Tyler D'Angelo" style="width:100%">
-                        <h1 class="title is-4">Tyler D'Angelo</h1>
-                        <h1 class="title is-6">Full Stack Web Development Student</h1>
-                        <p id="email">tydangelo18@gmail.com</p>
-                        <p id="phone">(817) 271-4491</p>
-                        <a class="cardGithub" href="https://github.com/tydangelo18" target="null"><i
-                                class="fab fa-github"></i></a>
-                        <a class="cardLinkedIn" href="https://www.linkedin.com/in/tydangelo18" target="null"><i
-                                class="fab fa-linkedin-in"></i></a>
-                        <a href="https://drive.google.com/file/d/1r80-CwnW0dnZdNuhH2paMqWuASmBtCtQ/view?usp=sharing"
-                            target="null">
-                            <p><button>My Resume</button></p>
-                        </a>
+                <div class="column is-2" id="dayFour">
+                    <div class="card" id="cardFour">
+                        <h6 class="title is-5" id="dayFourDate"></h6>
+                        <h6 class="title is-6" id="dayFourMax"></h6>
+                        <h6 class="title is-6" id="dayFourMin"></h6>
+                        <h6 class="title is-6" id="dayFourHumidity"></h6>
+                        <h6 class="title is-6" id="dayFourWind"></h6>
+                        <h6 class="title is-6" id="dayFourWeather"></h6>
                     </div>
                 </div>
-                <div class="column is-2">
-                    <div class="card">
-                        <img src="" alt="Tyler D'Angelo" style="width:100%">
-                        <h1 class="title is-4">Tyler D'Angelo</h1>
-                        <h1 class="title is-6">Full Stack Web Development Student</h1>
-                        <p id="email">tydangelo18@gmail.com</p>
-                        <p id="phone">(817) 271-4491</p>
-                        <a class="cardGithub" href="#" target="null"><i class="fab fa-github"></i></a>
-                        <a class="cardLinkedIn" href="#" target="null"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" target="null">
-                            <p><button>My Resume</button></p>
-                        </a>
+                <div class="column is-2" id="dayFive">
+                    <div class="card" id="cardFive">
+                        <h6 class="title is-5" id="dayFiveDate"></h6>
+                        <h6 class="title is-6" id="dayFiveMax"></h6>
+                        <h6 class="title is-6" id="dayFiveMin"></h6>
+                        <h6 class="title is-6" id="dayFiveHumidity"></h6>
+                        <h6 class="title is-6" id="dayFiveWind"></h6>
+                        <h6 class="title is-6" id="dayFiveWeather"></h6>
                     </div>
                 </div>
                 <div class="column is-1">
@@ -166,6 +150,10 @@
     </br>
 
     <footer></footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>

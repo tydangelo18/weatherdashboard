@@ -1,10 +1,13 @@
 body {
   line-height: 2.5;
+  background-image: linear-gradient(120deg, #26acff, #ffffff);
+  min-height: 100vh;
 }
 
 #titleDiv {
   display: flex;
   justify-content: center;
+  font-family: "Baloo Bhai 2", cursive;
 }
 
 .card {
@@ -12,13 +15,26 @@ body {
   max-width: 300px;
   margin: auto;
   text-align: center;
+  font-family: "Baloo Bhai 2", cursive;
+  padding-bottom: 1em;
+  padding-top: 1em;
+  border-radius: 0.25em 0.25em 0.25em 0.25em;
 }
 
-/* #cardOne,
-#cardTwo,
-#cardThree,
-#cardFour,
-#cardFive {
-  height: 400px;
-  line-height: 20px;
-} */
+#weather-button {
+  color: black;
+  border: 2px solid black;
+  background-color: #ffffff;
+  font-weight: bold;
+  border-radius: 0.25em 0.25em 0.25em 0.25em;
+}
+
+#searchBtnDiv {
+  display: flex;
+  justify-content: center;
+}
+
+#mainCityDiv {
+  display: flex;
+  justify-content: flex-start;
+}

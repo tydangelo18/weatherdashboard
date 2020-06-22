@@ -65,11 +65,11 @@ $("#weather-button").on("click", function (event) {
       // Moment.js
       let foreCast = $("<h2>");
 
-      let forecastDate1 = $("<h5>").text(forecastMoment1.format("dddd"));
-      let forecastDate2 = $("<h5>").text(forecastMoment2.format("dddd"));
-      let forecastDate3 = $("<h5>").text(forecastMoment3.format("dddd"));
-      let forecastDate4 = $("<h5>").text(forecastMoment4.format("dddd"));
-      let forecastDate5 = $("<h5>").text(forecastMoment5.format("dddd"));
+      let forecastDate1 = $("<h5>").text(forecastMoment1.format("ddd"));
+      let forecastDate2 = $("<h5>").text(forecastMoment2.format("ddd"));
+      let forecastDate3 = $("<h5>").text(forecastMoment3.format("ddd"));
+      let forecastDate4 = $("<h5>").text(forecastMoment4.format("ddd"));
+      let forecastDate5 = $("<h5>").text(forecastMoment5.format("ddd"));
 
       // Append Each API object into HTML
 

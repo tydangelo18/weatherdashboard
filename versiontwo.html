@@ -8,8 +8,12 @@
 
     <link rel="stylesheet" href="versiontwo.css">
 
-    <!--Bulma CDN is easiest-->
+    <!--Bulma CDN-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.2/css/bulma.css" />
+    <!--Google Background Color-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -42,7 +46,9 @@
                                
                             <input class="input" type="text" placeholder="choose a city..." id="weather-input" />
 
-                            <input id="weather-button" type="submit" value="search." />
+                            <div class="column is-12" id="searchBtnDiv">
+                                <input id="weather-button" type="submit" value="search." />
+                            </div>
                                   
                         </form>
                 
@@ -60,12 +66,14 @@
         <!--Main Weather Card-->
         <div class="block" id="weather">
             <div class="columns">
-                <div class="column is-3">
+                <div class="column is-4">
                     <!--For Space-->
                 </div>
-                <div class="column is-6">
+                <div class="column is-4">
                     <div class="card">
-                        <h2 class="title is-3" id="city"></h2>
+                        <div class="column is-12" id="mainCityDiv">
+                            <h2 class="title is-3" id="city"></h2>
+                        </div>
                         <h2 class="title is-4" id="date"></h2>
                         <h2 class="title is-5" id="temp"></h2>
                         <h2 class="title is-5" id="humid"></h2>
@@ -74,7 +82,7 @@
 
                     </div>
                 </div>
-                <div class="column is-3">
+                <div class="column is-4">
                     <!--For Space-->
                 </div>
             </div>

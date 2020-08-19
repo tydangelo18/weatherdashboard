@@ -95,26 +95,6 @@ label {
   margin-bottom: 16px;
 }
 
-#savedCity {
-  display: flex;
-  justify-content: flex-end;
-}
-
-#cityOne,
-#cityTwo,
-#cityThree,
-#cityFour,
-#cityFive,
-#citySix,
-#citySeven,
-#cityEight,
-#cityNine,
-#cityTen {
-  border: 1px solid black;
-  width: 100px;
-  background-color: #0ae706;
-}
-
 #weatherCard {
   padding-left: 66px;
 }

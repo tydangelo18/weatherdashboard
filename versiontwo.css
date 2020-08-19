@@ -1,40 +1,109 @@
+html,
 body {
-  line-height: 2.5;
+  line-height: 1.25;
   background-image: linear-gradient(120deg, #26acff, #ffffff);
-  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 #titleDiv {
   display: flex;
   justify-content: center;
-  font-family: "Baloo Bhai 2", cursive;
+  color: white;
+  font-family: 'Baloo Tamma 2', cursive;
+  font-size: 55px;
 }
 
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
-  margin: auto;
-  text-align: center;
-  font-family: "Baloo Bhai 2", cursive;
-  padding-bottom: 1em;
-  padding-top: 1em;
-  border-radius: 0.25em 0.25em 0.25em 0.25em;
-}
-
-#weather-button {
-  color: black;
-  border: 2px solid black;
-  background-color: #ffffff;
-  font-weight: bold;
-  border-radius: 0.25em 0.25em 0.25em 0.25em;
-}
-
-#searchBtnDiv {
+#searchBar {
   display: flex;
   justify-content: center;
 }
 
-#mainCityDiv {
+#city {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
+  padding-top: 1.0rem;
+  padding-bottom: 1.0rem;
+  font-family: 'Baloo Tamma 2', cursive;
+  font-size: 40px;
 }
+
+#icon {
+  display: flex;
+  justify-content: center;
+  padding-top: 1.0rem;
+  padding-bottom: 1.0rem;
+}
+
+#misc {
+  padding-top: 1.0rem;
+  padding-bottom: 1.0rem;
+  font-family: 'Baloo Tamma 2', cursive;
+  font-size: 25px;
+}
+
+#currentTime {
+  display: flex;
+  justify-content: center;
+  padding-top: 1.0rem;
+  padding-bottom: 1.0rem;
+  font-family: 'Baloo Tamma 2', cursive;
+  font-size: 25px;
+}
+
+#temp {
+  display: flex;
+  justify-content: center;
+  padding-top: 1.0rem;
+  padding-bottom: 1.0rem;
+  font-family: 'Baloo Tamma 2', cursive;
+  font-size: 90px;
+
+}
+
+#humid {
+  font-family: 'Baloo Tamma 2', cursive;
+  font-size: 25px;
+}
+
+#dayOne, #dayTwo, #dayThree, #dayFour, #dayFive {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 900;
+  line-height: 3.0;
+}
+
+
+#dayOneDate, #dayTwoDate, #dayThreeDate, #dayFourDate, #dayFiveDate, #daySixDate {
+  padding: 5px;
+  font-size: 25px;
+}
+
+
+#dayOneDate {
+  animation-name: dayOne;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes dayOne {
+  0% {
+    bottom: -20px;
+  }
+  100% {
+    bottom: 5px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+

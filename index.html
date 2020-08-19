@@ -5,14 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Forecast - Dashboard</title>
 
-    <link rel="stylesheet" href="style.css" />
+    <!--Reset CSS CDN-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css"
+    />
+
+    <!--Font Awesome CDN-->
+    <script
+      src="https://kit.fontawesome.com/db5e26bbb4.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!--Bulma CDN-->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.min.css"
     />
+
+    <!--Google Background CDN-->
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+
+    <!--Google Fonts-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--CSS File-->
+    <link rel="stylesheet" href="style.css" />
+
+    
   </head>
 
   <body>
@@ -25,21 +50,6 @@
 
       <input id="weather-button" type="submit" value="search." />
     </form>
-
-    <div id="savedCity" class="container">
-      <div id="savedCityList" class="row">
-        <div id="recents" class="col-md-1">Recents:</div>
-        <div id="cityOne" class="col-md-1"></div>
-        <div id="cityTwo" class="col-md-1"></div>
-        <div id="cityThree" class="col-md-1"></div>
-        <div id="cityFour" class="col-md-1"></div>
-        <div id="cityFive" class="col-md-1"></div>
-        <div id="citySix" class="col-md-1"></div>
-        <div id="citySeven" class="col-md-1"></div>
-        <div id="cityEight" class="col-md-1"></div>
-        <div id="cityNine" class="col-md-1"></div>
-      </div>
-    </div>
 
     <div id="weather">
       <div id="city" class="row">

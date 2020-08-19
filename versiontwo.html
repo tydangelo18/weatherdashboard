@@ -1,167 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather Sample</title>
 
-    <link rel="stylesheet" href="versiontwo.css">
+    <link rel="stylesheet" href="versiontwo.css" />
 
     <!--Bulma CDN-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.2/css/bulma.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.2/css/bulma.css"
+    />
     <!--Google Background Color-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <!--Google Fonts-->
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@600&display=swap" rel="stylesheet">
-</head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+    ></script>
+  </head>
 
-<body>
-    <section>
-        <header>
-            <div class="block">
-                <div class="columns">
-                    <div class="column is-12" id="titleDiv">
-                        <h1 class="title is-2">Weather Dashboard</h1>
-                    </div>
-                   
-                </div>
-            </div>
-        </header>
-    </section>
+  <body>
+    <!--Title-->
+    <header class="weatherHeader">
+      <div class="column is-12" id="titleDiv">
+        <h1>Weather Dashboard</h1>
+      </div>
+    </header>
 
-    <br>
-
-    <section>
-        <!--Search Bar-->
-        <div class="block">
-            <div class="columns">
-                <div class="column is-4">
-                    <!--For Space-->
-                </div>
-                <div class="column is-4">
-                
-                        <form id="search">
-                            <label for="weather-input"></label>
-                               
-                            <input class="input" type="text" placeholder="choose a city..." id="weather-input" />
-
-                            <div class="column is-12" id="searchBtnDiv">
-                                <input id="weather-button" type="submit" value="search." />
-                            </div>
-                                  
-                        </form>
-                
-                </div>
-                <div class="column is-4">
-                    <!--For Space-->
-                </div>
-            </div>
+    <!--Search Bar-->
+    <section class="searchBar">
+      <div class="columns is-mobile">
+        <div class="column is-12" id="searchBar">
+          <div class="field has-addons">
+            <p class="control has-icons-left" id="navBarSearch">
+              <input
+                class="input search-input is-rounded"
+                id="weather-input"
+                type="text"
+                placeholder="Choose a City..."
+              />
+              <span class="icon is-small is-left">
+                <i class="fas fa-city"></i>
+              </span>
+            </p>
+            <p class="control" id="homeBarBtn">
+              <a href="" id="weather-button" class="button search-button is-info is-info is-rounded"
+                ><strong>Search</strong></a
+              >
+            </p>
+          </div>
         </div>
+      </div>
     </section>
-
-    </br>
 
     <section>
-        <!--Main Weather Card-->
-        <div class="block" id="weather">
-            <div class="columns">
-                <div class="column is-4">
-                    <!--For Space-->
-                </div>
-                <div class="column is-4">
-                    <div class="card">
-                        <div class="column is-12" id="mainCityDiv">
-                            <h2 class="title is-3" id="city"></h2>
-                        </div>
-                        <h2 class="title is-4" id="date"></h2>
-                        <h2 class="title is-5" id="temp"></h2>
-                        <h2 class="title is-5" id="humid"></h2>
-                        <h2 class="title is-5" id="wind"></h2>
-                        <h2 class="title is-5" id="forecast"></h2>
-
-                    </div>
-                </div>
-                <div class="column is-4">
-                    <!--For Space-->
-                </div>
-            </div>
+      <!--City, Icon, and High/Low/Wind/Humid-->
+      <div class="columns is-mobile">
+        <div class="column is-3" id="city">
         </div>
+        <div class="column is-6" id="icon">
+          <!--<h2>Icon</h2>-->
+        </div>
+        <div class="column is-3" id="misc">
+          <!--<p>High/Low</p>-->
+          <p id="wind"></p>
+        </div>
+      </div>
     </section>
-
-    </br>
 
     <section>
-        <!--5 day forecast Cards-->
-        <div class="block" id="weatherCard">
-            <div class="columns" id="fiveDayForecast">
-                <div class="column is-1">
-                    <!--For Space-->
-                </div>
-                <div class="column is-2" id="dayOne">
-                    <div class="card" id="cardOne">
-                        <h6 class="title is-5" id="dayOneDate"></h6>
-                        <h6 class="title is-6" id="dayOneMax"></h6>
-                        <h6 class="title is-6" id="dayOneMin"></h6>
-                        <h6 class="title is-6" id="dayOneHumidity"></h6>
-                        <h6 class="title is-6" id="dayOneWind"></h6>
-                        <h6 class="title is-6" id="dayOneWeather"></h6>
-                    </div>
-                </div>
-                <div class="column is-2" id="dayTwo">
-                    <div class="card" id="cardTwo">
-                        <h6 class="title is-5" id="dayTwoDate"></h6>
-                        <h6 class="title is-6" id="dayTwoMax"></h6>
-                        <h6 class="title is-6" id="dayTwoMin"></h6>
-                        <h6 class="title is-6" id="dayTwoHumidity"></h6>
-                        <h6 class="title is-6" id="dayTwoWind"></h6>
-                        <h6 class="title is-6" id="dayTwoWeather"></h6>
-                    </div>
-                </div>
-                <div class="column is-2" id="dayThree">
-                    <div class="card" id="cardThree">
-                        <h6 class="title is-5" id="dayThreeDate"></h6>
-                        <h6 class="title is-6" id="dayThreeMax"></h6>
-                        <h6 class="title is-6" id="dayThreeMin"></h6>
-                        <h6 class="title is-6" id="dayThreeHumidity"></h6>
-                        <h6 class="title is-6" id="dayThreeWind"></h6>
-                        <h6 class="title is-6" id="dayThreeWeather"></h6>
-                    </div>
-                </div>
-                <div class="column is-2" id="dayFour">
-                    <div class="card" id="cardFour">
-                        <h6 class="title is-5" id="dayFourDate"></h6>
-                        <h6 class="title is-6" id="dayFourMax"></h6>
-                        <h6 class="title is-6" id="dayFourMin"></h6>
-                        <h6 class="title is-6" id="dayFourHumidity"></h6>
-                        <h6 class="title is-6" id="dayFourWind"></h6>
-                        <h6 class="title is-6" id="dayFourWeather"></h6>
-                    </div>
-                </div>
-                <div class="column is-2" id="dayFive">
-                    <div class="card" id="cardFive">
-                        <h6 class="title is-5" id="dayFiveDate"></h6>
-                        <h6 class="title is-6" id="dayFiveMax"></h6>
-                        <h6 class="title is-6" id="dayFiveMin"></h6>
-                        <h6 class="title is-6" id="dayFiveHumidity"></h6>
-                        <h6 class="title is-6" id="dayFiveWind"></h6>
-                        <h6 class="title is-6" id="dayFiveWeather"></h6>
-                    </div>
-                </div>
-                <div class="column is-1">
-                    <!--For Space-->
-                </div>
-            </div>
+      <!--Time, High-->
+      <div class="columns is-mobile">
+        <div class="column is-3" id="currentTime">
+          <!--<p>2:35 P.M.</p>-->
         </div>
+        <div class="column is-6" id="temp">
+        </div>
+        <div class="column is-3" id="humid">
+        </div>
+      </div>
     </section>
 
-    </br>
+    <section>
+      <!--5-Day Forecast Cards-->
+      <div class="columns is-mobile" id="forecastContainer">
+        <div class="column is-1">
+          <!--Blank Space-->
+        </div>
+        <div class="column is-2" id="dayOne">
+          <p id="dayOneDate"></p>
+          <p id="dayOneIcon"></p>
+          <p id="dayOneMax"></p>
+        </div>
+        <div class="column is-2" id="dayTwo">
+          <p id="dayTwoDate"></p>
+          <p id="dayTwoIcon"></p>
+          <p id="dayTwoMax"></p>
+        </div>
+        <div class="column is-2" id="dayThree">
+          <p id="dayThreeDate"></p>
+          <p id="dayThreeIcon"></p>
+          <p id="dayThreeMax"></p>
+        </div>
+        <div class="column is-2" id="dayFour">
+          <p id="dayFourDate"></p>
+          <p id="dayFourIcon"></p>
+          <p id="dayFourMax"></p>
+        </div>
+        <div class="column is-2" id="dayFive">
+          <p id="dayFiveDate"></p>
+          <p id="dayFiveIcon"></p>
+          <p id="dayFiveMax"></p>
+        </div>
+        <div class="column is-1">
+          <!--Blank Space-->
+        </div>
+        
+    </section>
 
-    <footer></footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
     <script src="app.js"></script>
-</body>
-
+  </body>
 </html>

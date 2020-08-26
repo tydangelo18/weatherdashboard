@@ -10,9 +10,19 @@ function writeHTML(obj, method) {
   }
 }
 
+
+
 // Call the API
 $("#weather-button").on("click", function (event) {
   event.preventDefault();
+  $("#city").animate({
+    width: "70%",
+    opacity: 0.4,
+    marginLeft: "0.6px",
+    fontSize: "3em",
+    borderWidth: "10px"
+  }, 1500);
+
 
   // Declare a variable for any city inserted into the search bar
   let city = $("#weather-input").val();
@@ -28,6 +38,8 @@ $("#weather-button").on("click", function (event) {
 
   // OpenWeather API URL & API Key
   let queryURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=def8b41b43fe3f2e5dff96db885a6932`;
+  // Weather Icon Call
+  let iconURL = `http://openweathermap.org/img/wn/`
 
   // AJAX Call for the API
 
@@ -49,7 +61,7 @@ $.ajax({
   })
     .then(function (response) {
       let weatherCity = $("<h1>").text(response.name);
-      let weatherIcon = $("<img>").text(response.weather[0].id);
+      let weatherIcon = $("<img>").attr('src',`${iconURL}${response.weather[0].icon}@2x.png`);
 
       // Moment.js
       let m = moment();
@@ -111,6 +123,8 @@ $.ajax({
 
   // OpenWeather 5-Day Forecast API URL & API Key
   let queryURL2 = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=def8b41b43fe3f2e5dff96db885a6932`;
+  // Weather Icon Call
+  let iconURL2 = `http://openweathermap.org/img/wn/`
 
   // AJAX call for the API
   $.ajax({

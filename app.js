@@ -15,13 +15,10 @@ function writeHTML(obj, method) {
 // Call the API
 $("#weather-button").on("click", function (event) {
   event.preventDefault();
-  // $("#city").animate({
-  //   width: "70%",
-  //   opacity: 0.4,
-  //   marginLeft: "0.6px",
-  //   fontSize: "3em",
-  //   borderWidth: "10px"
-  // }, 1500);
+   // $("#city").animate({
+   //   opacity: 0.4,
+   //   
+   // }, 1500);
 
   // Declare a variable for any city inserted into the search bar
       let city = $("#weather-input").val();

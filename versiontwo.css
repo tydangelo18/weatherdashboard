@@ -15,9 +15,38 @@ body {
   font-size: 55px;
 }
 
+#headerTitle {
+  opacity: 0;
+  position: relative;
+  animation-name: title;
+  animation-duration: 2s;
+  animation-delay: .5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes title {
+  0% {opacity: 0;}
+  50% {opacity: .5; font-size: 75px;}
+  100% {opacity: 1; font-size: 55px;}
+}
+
 #searchBar {
   display: flex;
   justify-content: center;
+}
+
+#search {
+  opacity: 0;
+  position: relative;
+  animation-name: searchBar;
+  animation-duration: 3s;
+  animation-delay: 2.18s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes searchBar {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
 }
 
 #city {

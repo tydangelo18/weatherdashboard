@@ -6,17 +6,20 @@ Tyler D'Angelo
 
 - [Github](https://github.com/tydangelo18).
 
+### Demo
+
+- [Here](https://tydangelo18.github.io/weatherdashboard/)
+
 ### Technologies Used
 
 1. HTML
 2. CSS
-3. Bootstrap (_Grid System_)
+3. Bulma (_Grid System_)
 4. Javascript
 5. JQuery
 6. AJAX
 7. Open Weather API
-8. [Github](https://github.com/tydangelo18).
-9. [Github Pages](https://tydangelo18.github.io/weatherdashboard/.)
+
 
 ### Application Features
 

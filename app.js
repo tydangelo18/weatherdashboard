@@ -15,10 +15,42 @@ function writeHTML(obj, method) {
 // Call the API
 $("#weather-button").on("click", function (event) {
   event.preventDefault();
-   // $("#city").animate({
-   //   opacity: 0.4,
-   //   
-   // }, 1500);
+    
+  $("#city").animate({
+      opacity: 1,
+    }, 2000);
+
+    $("#temp").delay(4000).animate({
+      opacity: 1,
+    }, 1500);
+    
+    $("#humid").animate({
+      opacity: 1,
+    }, 1500);
+    
+    $("#misc").animate({
+      opacity: 1,
+    }, 1500);
+
+    $("#dayOne").delay(1500).animate({
+      opacity: 1,
+    }, 1500);
+    
+    $("#dayTwo").delay(2000).animate({
+      opacity: 1,
+    }, 1500);
+    
+    $("#dayThree").delay(2500).animate({
+      opacity: 1,
+    }, 1500);
+    
+    $("#dayFour").delay(3000).animate({
+      opacity: 1,
+    }, 1500);
+    
+    $("#dayFive").delay(3500).animate({
+      opacity: 1,
+    }, 1500);
 
   // Declare a variable for any city inserted into the search bar
       let city = $("#weather-input").val();
@@ -58,7 +90,8 @@ $.ajax({
   })
     .then(function (response) {
       let weatherCity = $("<h1>").text(response.name);
-      let weatherIcon = $("<img>").attr('src',`${iconURL}${response.weather[0].icon}@2x.png`);
+      let weatherIcon = $("<img>").attr('src',`${iconURL}${response.weather[0].icon}@2x.png`).attr('id', 'mainIcon');
+
 
       // Moment.js
       let m = moment();

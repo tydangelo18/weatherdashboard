@@ -3,121 +3,133 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Forecast - Dashboard</title>
+    <title>Dashboard</title>
 
-    <!--Reset CSS CDN-->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css"
-    />
-
-    <!--Font Awesome CDN-->
-    <script
-      src="https://kit.fontawesome.com/db5e26bbb4.js"
-      crossorigin="anonymous"
-    ></script>
+    <link rel="stylesheet" href="style.css" />
 
     <!--Bulma CDN-->
     <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.min.css"
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.2/css/bulma.css"
     />
-
-    <!--Google Background CDN-->
+    <!--Google Background Color-->
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-
     <!--Google Fonts-->
     <link
-      href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@600&display=swap"
       rel="stylesheet"
     />
-
-    <!--CSS File-->
-    <link rel="stylesheet" href="style.css" />
-
-    
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+    ></script>
   </head>
 
   <body>
-    <form id="search">
-      <label for="weather-input">Weather Dashboard</label>
-
-      <br />
-
-      <input type="text" id="weather-input" />
-
-      <input id="weather-button" type="submit" value="search." />
-    </form>
-
-    <div id="weather">
-      <div id="city" class="row">
-        <div class="col-md-1"></div>
+    <!--Title-->
+    <header class="weatherHeader">
+      <div class="column is-12" id="titleDiv">
+        <h1 id="headerTitle">Weather Dashboard</h1>
       </div>
-      <div id="fiveDay">
-        <div id="date" class="row">
-          <div class="col-md-1"></div>
-        </div>
-        <div id="temp" class="row">
-          <div class="col-md-1"></div>
-        </div>
-        <div id="humid" class="row">
-          <div class="col-md-1"></div>
-        </div>
-        <div id="wind" class="row">
-          <div class="col-md-1"></div>
-        </div>
-        <div id="forecast" class="row">
-          <div class="col-md-1"></div>
-        </div>
-      </div>
+    </header>
 
-      <div id="weatherCard" class="container">
-        <div id="fiveDayForecast" class="row">
-          <div id="dayOne" class="col-md-2">
-            <h6 id="dayOneDate"></h6>
-            <p id="dayOneMax"></p>
-            <p id="dayOneMin"></p>
-            <p id="dayOneHumidity"></p>
-            <p id="dayOneWind"></p>
-            <p id="dayOneWeather"></p>
-          </div>
-          <div id="dayTwo" class="col-md-2">
-            <h6 id="dayTwoDate"></h6>
-            <p id="dayTwoMax"></p>
-            <p id="dayTwoMin"></p>
-            <p id="dayTwoHumidity"></p>
-            <p id="dayTwoWind"></p>
-            <p id="dayTwoWeather"></p>
-          </div>
-          <div id="dayThree" class="col-md-2">
-            <h6 id="dayThreeDate"></h6>
-            <p id="dayThreeMax"></p>
-            <p id="dayThreeMin"></p>
-            <p id="dayThreeHumidity"></p>
-            <p id="dayThreeWind"></p>
-            <p id="dayThreeWeather"></p>
-          </div>
-          <div id="dayFour" class="col-md-2">
-            <h6 id="dayFourDate"></h6>
-            <p id="dayFourMax"></p>
-            <p id="dayFourMin"></p>
-            <p id="dayFourHumidity"></p>
-            <p id="dayFourWind"></p>
-            <p id="dayFourWeather"></p>
-          </div>
-          <div id="dayFive" class="col-md-2">
-            <h6 id="dayFiveDate"></h6>
-            <p id="dayFiveMax"></p>
-            <p id="dayFiveMin"></p>
-            <p id="dayFiveHumidity"></p>
-            <p id="dayFiveWind"></p>
-            <p id="dayFiveWeather"></p>
+    <!--Search Bar-->
+    <section class="searchBar">
+      <div class="columns is-mobile">
+        <div class="column is-12" id="searchBar">
+          <div class="field has-addons" id="search">
+            <p class="control has-icons-left" id="navBarSearch">
+              <input
+                class="input search-input is-rounded"
+                id="weather-input"
+                type="text"
+                placeholder="Choose a City..."
+              />
+              <span class="icon is-small is-left">
+                <i class="fas fa-city"></i>
+              </span>
+            </p>
+            <p class="control" id="homeBarBtn">
+              <a href="" id="weather-button" class="button search-button is-info is-info is-rounded"
+                ><strong>Search</strong></a
+              >
+            </p>
           </div>
         </div>
       </div>
-    </div>
+    </section>
+
+    <section>
+      <!--City, Icon, and High/Low/Wind/Humid-->
+      <div class="columns is-mobile">
+        <div class="column is-3" id="city">
+        </div>
+        <div class="column is-6">
+          <span id="icon">
+
+          </span>
+        </div>
+        <div class="column is-3"></div>
+        
+      </div>
+    </section>
+
+    <section>
+      <!--Time, High-->
+      <div class="columns is-mobile">
+        <div class="column is-3" id="humid"></div>
+        <div class="column is-6" id="temp">
+        </div>
+        <div class="column is-3" id="misc">
+          <!--<p>High/Low</p>-->
+          <p id="wind"></p>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <!--5-Day Forecast Cards-->
+      <div class="columns is-mobile" id="forecastContainer">
+        <div class="column is-1">
+          <!--Blank Space-->
+        </div>
+        <div class="column is-2" id="dayOne">
+          <p id="dayOneDate"></p>
+          <span id="dayOneIcon">
+            
+          </span>
+          <p id="dayOneMax"></p>
+        </div>
+        <div class="column is-2" id="dayTwo">
+          <p id="dayTwoDate"></p>
+          <span id="dayTwoIcon"></span>
+          <p id="dayTwoMax"></p>
+        </div>
+        <div class="column is-2" id="dayThree">
+          <p id="dayThreeDate"></p>
+          <span id="dayThreeIcon"></span>
+          <p id="dayThreeMax"></p>
+        </div>
+        <div class="column is-2" id="dayFour">
+          <p id="dayFourDate"></p>
+          <span id="dayFourIcon"></span>
+          <p id="dayFourMax"></p>
+        </div>
+        <div class="column is-2" id="dayFive">
+          <p id="dayFiveDate"></p>
+          <span id="dayFiveIcon"></span>
+          <p id="dayFiveMax"></p>
+        </div>
+        <div class="column is-1">
+          <!--Blank Space-->
+        </div>
+        
+    </section>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>

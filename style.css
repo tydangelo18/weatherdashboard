@@ -1,100 +1,149 @@
+html,
 body {
-  background-image: linear-gradient(120deg, #46caff, #ffffff);
-  min-height: 100vh;
+  line-height: 1.25;
+  background-image: linear-gradient(120deg, #26acff, #d3d3d3);
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+#titleDiv {
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-family: 'Baloo Tamma 2', cursive;
+  font-size: 55px;
+}
+
+#headerTitle {
+  opacity: 0;
+  position: relative;
+  animation-name: title;
+  animation-duration: 2s;
+  animation-delay: .5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes title {
+  0% {opacity: 0;}
+  50% {opacity: .5; font-size: 75px;}
+  100% {opacity: 1; font-size: 55px;}
+}
+
+#searchBar {
+  display: flex;
+  justify-content: center;
 }
 
 #search {
-  background-color: rgb(0, 0, 0);
-  opacity: .8;
-  display: flex;
-  justify-content: flex-start;
-  height: 5em;
+  opacity: 0;
+  position: relative;
+  animation-name: searchBar;
+  animation-duration: 3s;
+  animation-delay: 2.18s;
+  animation-fill-mode: forwards;
 }
 
-label {
-  color: white;
-  padding: 10px;
-}
-
-#weather {
-  width: 1400px;
-  margin: auto;
-  border-radius: 2em 2em 2em 2em;
-  margin-top: 10px;
-  padding: 20px 45px;
-}
-
-#temp,
-#humid,
-#wind {
-  display: flex;
-  justify-content: center;
-  padding-left: 0px;
-  margin-top: 20px;
+@keyframes searchBar {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
 }
 
 #city {
   display: flex;
-  justify-content: flex-start;
-  padding-left: 0px;
-  margin-top: 30px;
-  padding-left: 158px;
+  justify-content: center;
+  padding-top: 1.0rem;
+  padding-bottom: 1.0rem;
+  font-family: 'Baloo Tamma 2', cursive;
+  font-size: 40px;
+  color: white;
+  opacity: 0;
 }
 
-#date {
+#icon {
   display: flex;
   justify-content: center;
-  padding-left: 0px;
-  margin-top: -59px;
-  margin-bottom: 20px;
+  padding-top: 1.0rem;
+  padding-bottom: 1.0rem;
 }
 
-#forecast {
-  margin-top: 50px;
-  margin-bottom: 5px;
+#mainIcon {
+  opacity: 0;
+  position: relative;
+  animation-name: mainIcon;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
 }
 
-#weather-button {
-  border-radius: 1em 1em 1em 1em;
-  color: black;
-  font-weight: bold;
-  background-color: #0ae706;
-  border: 2px solid black;
-  height: fit-content;
-  padding: 5px;
-  margin: 20px;
-  margin-left: 0px;
+@keyframes mainIcon {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
 }
 
-#weather-input {
-  border: 3px solid black;
-  margin-left: 5px;
-  font-weight: bold;
-  height: fit-content;
-  padding: 5px;
-  margin: 18px;
+#misc {
+  padding-top: 1.0rem;
+  padding-bottom: 1.0rem;
+  font-family: 'Baloo Tamma 2', cursive;
+  font-size: 25px;
+  color: white;
+  opacity: 0;
 }
 
-label {
-  font-weight: bold;
-  margin-left: 6px;
-  font-size: 35px;
-}
-
-#fiveDayForecast {
+#currentTime {
   display: flex;
-  justify-content: space-between;
-  margin-top: 0px;
+  justify-content: center;
+  padding-top: 1.0rem;
+  padding-bottom: 1.0rem;
+  font-family: 'Baloo Tamma 2', cursive;
+  font-size: 25px;
 }
 
-#dayOneDate,
-#dayTwoDate,
-#dayThreeDate,
-#dayFourDate,
-#dayFiveDate {
-  margin-bottom: 16px;
+#temp {
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  padding-top: 1.0rem;
+  padding-bottom: 1.0rem;
+  font-family: 'Baloo Tamma 2', cursive;
+  font-size: 90px;
 }
 
-#weatherCard {
-  padding-left: 66px;
+#humid {
+  font-family: 'Baloo Tamma 2', cursive;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  color: white;
+  opacity: 0;
+}
+
+#dayOne, #dayTwo, #dayThree, #dayFour, #dayFive {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 900;
+  line-height: 3.0;
+  opacity: 0;
+}
+
+
+#dayOneDate, #dayTwoDate, #dayThreeDate, #dayFourDate, #dayFiveDate, #daySixDate {
+  padding: 5px;
+  font-size: 25px;
+}
+
+
+#dayOneDate {
+  animation-name: dayOne;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes dayOne {
+  0% {
+    bottom: -20px;
+  }
+  100% {
+    bottom: 5px;
+  }
 }

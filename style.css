@@ -52,8 +52,8 @@ body {
 #city {
   display: flex;
   justify-content: center;
-  padding-top: 1.0rem;
-  padding-bottom: 1.0rem;
+  padding-top: 0rem;
+  padding-bottom: 0rem;
   font-family: 'Baloo Tamma 2', cursive;
   font-size: 40px;
   color: white;
@@ -63,8 +63,8 @@ body {
 #icon {
   display: flex;
   justify-content: center;
-  padding-top: 1.0rem;
-  padding-bottom: 1.0rem;
+  padding-top: 0rem;
+  padding-bottom: 0rem;
 }
 
 #mainIcon {
@@ -81,29 +81,23 @@ body {
 }
 
 #misc {
-  padding-top: 1.0rem;
-  padding-bottom: 1.0rem;
+  padding-top: 0rem;
+  padding-bottom: 0rem;
   font-family: 'Baloo Tamma 2', cursive;
   font-size: 25px;
   color: white;
   opacity: 0;
-}
-
-#currentTime {
   display: flex;
   justify-content: center;
-  padding-top: 1.0rem;
-  padding-bottom: 1.0rem;
-  font-family: 'Baloo Tamma 2', cursive;
-  font-size: 25px;
 }
+
 
 #temp {
   opacity: 0;
   display: flex;
   justify-content: center;
-  padding-top: 1.0rem;
-  padding-bottom: 1.0rem;
+  padding-top: 0rem;
+  padding-bottom: 0rem;
   font-family: 'Baloo Tamma 2', cursive;
   font-size: 90px;
   color: white;
@@ -123,7 +117,7 @@ body {
   flex-direction: column;
   align-items: center;
   font-weight: 900;
-  line-height: 3.0;
+  line-height: 2.25;
   opacity: 0;
   color: white;
 }

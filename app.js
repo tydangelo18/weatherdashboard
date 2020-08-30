@@ -114,7 +114,7 @@ $.ajax({
       );
 
       let weatherWind = $("<h4>").text(
-        `Wind Speed: ${response.wind.speed} MPH`
+        `Wind: ${response.wind.speed} MPH`
       );
 
       // Moment.js

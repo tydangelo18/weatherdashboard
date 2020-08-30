@@ -1,7 +1,7 @@
 html,
 body {
   line-height: 1.25;
-  background-image: linear-gradient(120deg, #26acff, #d3d3d3);
+  background-image: linear-gradient(120deg, #4a4a4a, #939393);
   margin: 0;
   padding: 0;
   height: 100%;
@@ -106,6 +106,7 @@ body {
   padding-bottom: 1.0rem;
   font-family: 'Baloo Tamma 2', cursive;
   font-size: 90px;
+  color: white;
 }
 
 #humid {
@@ -124,26 +125,14 @@ body {
   font-weight: 900;
   line-height: 3.0;
   opacity: 0;
+  color: white;
 }
 
 
 #dayOneDate, #dayTwoDate, #dayThreeDate, #dayFourDate, #dayFiveDate, #daySixDate {
   padding: 5px;
   font-size: 25px;
+  color: white;
 }
 
 
-#dayOneDate {
-  animation-name: dayOne;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-}
-
-@keyframes dayOne {
-  0% {
-    bottom: -20px;
-  }
-  100% {
-    bottom: 5px;
-  }
-}

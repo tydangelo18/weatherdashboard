@@ -28,5 +28,6 @@ Tyler D'Angelo
 
 ### Preview
 
-![Screen Shot 2020-08-29 at 12 51 25 PM](https://user-images.githubusercontent.com/60044459/91643151-64c3c680-e9f6-11ea-92f4-ea8a65fffac8.png)
+![Screen Shot 2020-08-31 at 9 17 45 PM](https://user-images.githubusercontent.com/60044459/91787530-b96e6980-ebcf-11ea-94d8-f497f3eb4708.png)
+
 

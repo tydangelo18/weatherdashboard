@@ -1,76 +1,100 @@
 function clear(ids) {
   for (const id of ids) {
-    $("#" + id).empty();
+    $('#' + id).empty();
   }
 }
 
 function writeHTML(obj, method) {
   for (const id in obj) {
-    $("#" + id)[method](obj[id]);
+    $('#' + id)[method](obj[id]);
   }
 }
 
-
-
 // Call the API
-$("#weather-button").on("click", function (event) {
+$('#weather-button').on('click', function (event) {
   event.preventDefault();
-    
-  $("#city").animate({
-      opacity: 1,
-    }, 2000);
 
-    $("#temp").delay(4000).animate({
+  $('#city').animate(
+    {
       opacity: 1,
-    }, 1500);
-    
-    $("#humid").animate({
-      opacity: 1,
-    }, 1500);
-    
-    $("#misc").animate({
-      opacity: 1,
-    }, 1500);
+    },
+    2000
+  );
 
-    $("#dayOne").delay(1500).animate({
+  $('#temp').delay(4000).animate(
+    {
       opacity: 1,
-    }, 1500);
-    
-    $("#dayTwo").delay(2000).animate({
+    },
+    1500
+  );
+
+  $('#humid').animate(
+    {
       opacity: 1,
-    }, 1500);
-    
-    $("#dayThree").delay(2500).animate({
+    },
+    1500
+  );
+
+  $('#misc').animate(
+    {
       opacity: 1,
-    }, 1500);
-    
-    $("#dayFour").delay(3000).animate({
+    },
+    1500
+  );
+
+  $('#dayOne').delay(1500).animate(
+    {
       opacity: 1,
-    }, 1500);
-    
-    $("#dayFive").delay(3500).animate({
+    },
+    1500
+  );
+
+  $('#dayTwo').delay(2000).animate(
+    {
       opacity: 1,
-    }, 1500);
+    },
+    1500
+  );
+
+  $('#dayThree').delay(2500).animate(
+    {
+      opacity: 1,
+    },
+    1500
+  );
+
+  $('#dayFour').delay(3000).animate(
+    {
+      opacity: 1,
+    },
+    1500
+  );
+
+  $('#dayFive').delay(3500).animate(
+    {
+      opacity: 1,
+    },
+    1500
+  );
 
   // Declare a variable for any city inserted into the search bar
-      let city = $("#weather-input").val();
-    
-    // Local Storage
-      // Save recent searches to local storage
-      //  localStorage.setItem("savedCity", JSON.stringify(city));
-      //
-       // Grab city from local storage
-      //  let recentCity = $("<p>").text(JSON.parse(localStorage.getItem("savedCity")));
-      //
-      //  Append the most recent searched city into Recent Container in HTML
-      //  $("#cityOne").append(recentCity);
+  let city = $('#weather-input').val();
+
+  // Local Storage
+  // Save recent searches to local storage
+  //  localStorage.setItem("savedCity", JSON.stringify(city));
+  //
+  // Grab city from local storage
+  //  let recentCity = $("<p>").text(JSON.parse(localStorage.getItem("savedCity")));
+  //
+  //  Append the most recent searched city into Recent Container in HTML
+  //  $("#cityOne").append(recentCity);
 
   // OpenWeather API URL & API Key
   let queryURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=def8b41b43fe3f2e5dff96db885a6932`;
   // Weather Icon Call
-  let iconURL = `http://openweathermap.org/img/wn/`
+  let iconURL = `http://openweathermap.org/img/wn/`;
 
-  
   // Vanilla JS API Call
   // async function ajaxCall(){
   //   try{
@@ -83,48 +107,45 @@ $("#weather-button").on("click", function (event) {
   //     console.log(error)
   //   }
 
-
-$.ajax({
+  $.ajax({
     url: queryURL,
-    method: "GET",
+    method: 'GET',
   })
     .then(function (response) {
-      let weatherCity = $("<h1>").text(response.name);
-      let weatherIcon = $("<img>").attr('src',`${iconURL}${response.weather[0].icon}@2x.png`).attr('id', 'mainIcon');
-
+      let weatherCity = $('<h1>').text(response.name);
+      let weatherIcon = $('<img>')
+        .attr('src', `${iconURL}${response.weather[0].icon}@2x.png`)
+        .attr('id', 'mainIcon');
 
       // Moment.js
       let m = moment();
 
-      let forecastMoment1 = moment().add(1, "days");
-      let forecastMoment2 = moment().add(2, "days");
-      let forecastMoment3 = moment().add(3, "days");
-      let forecastMoment4 = moment().add(4, "days");
-      let forecastMoment5 = moment().add(5, "days");
+      let forecastMoment1 = moment().add(1, 'days');
+      let forecastMoment2 = moment().add(2, 'days');
+      let forecastMoment3 = moment().add(3, 'days');
+      let forecastMoment4 = moment().add(4, 'days');
+      let forecastMoment5 = moment().add(5, 'days');
 
-      let weatherDate = $("<h2>").text(m.format("LT"));
+      let weatherDate = $('<h2>').text(m.format('LT'));
 
-      let weatherTemp = $("<h4>").text(
-        Math.round(((response.main.temp - 273.15) * 9) / 5 + 32) +
-          " °F"
+      let weatherTemp = $('<h4>').text(
+        Math.round(((response.main.temp - 273.15) * 9) / 5 + 32) + ' °F'
       );
 
-      let weatherHumidity = $("<h4>").text(
+      let weatherHumidity = $('<h4>').text(
         `Humidity: ${response.main.humidity}%`
       );
 
-      let weatherWind = $("<h4>").text(
-        `Wind: ${response.wind.speed} MPH`
-      );
+      let weatherWind = $('<h4>').text(`Wind: ${response.wind.speed} MPH`);
 
       // Moment.js
-      let foreCast = $("<h2>");
+      let foreCast = $('<h2>');
 
-      let forecastDate1 = $("<h5>").text(forecastMoment1.format("ddd"));
-      let forecastDate2 = $("<h5>").text(forecastMoment2.format("ddd"));
-      let forecastDate3 = $("<h5>").text(forecastMoment3.format("ddd"));
-      let forecastDate4 = $("<h5>").text(forecastMoment4.format("ddd"));
-      let forecastDate5 = $("<h5>").text(forecastMoment5.format("ddd"));
+      let forecastDate1 = $('<h5>').text(forecastMoment1.format('ddd'));
+      let forecastDate2 = $('<h5>').text(forecastMoment2.format('ddd'));
+      let forecastDate3 = $('<h5>').text(forecastMoment3.format('ddd'));
+      let forecastDate4 = $('<h5>').text(forecastMoment4.format('ddd'));
+      let forecastDate5 = $('<h5>').text(forecastMoment5.format('ddd'));
 
       // Append Each API object into HTML
       const callObj = {
@@ -143,7 +164,7 @@ $.ajax({
       };
 
       clear(Object.keys(callObj));
-      writeHTML(callObj, "append");
+      writeHTML(callObj, 'append');
     })
 
     // Catch Errors if API doesn't run
@@ -154,62 +175,69 @@ $.ajax({
   // OpenWeather 5-Day Forecast API URL & API Key
   let queryURL2 = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=def8b41b43fe3f2e5dff96db885a6932`;
   // Weather Icon Call
-  let iconURL2 = `http://openweathermap.org/img/wn/`
+  let iconURL2 = `http://openweathermap.org/img/wn/`;
 
   // AJAX call for the API
   $.ajax({
     url: queryURL2,
-    method: "GET",
+    method: 'GET',
   })
     .then(function (response) {
       console.log(response.list[3].weather[0].icon);
       // Day 1
-      let forecastMaxTemp1 = $("<p>").text(
+      let forecastMaxTemp1 = $('<p>').text(
         Math.round(((response.list[3].main.temp_max - 273.15) * 9) / 5 + 32) +
-          " °F"
+          ' °F'
       );
 
-      let weatherIconDayOne = $("<img>").attr('src',`${iconURL2}${response.list[3].weather[0].icon}@2x.png`);
+      let weatherIconDayOne = $('<img>').attr(
+        'src',
+        `${iconURL2}${response.list[3].weather[0].icon}@2x.png`
+      );
 
       // Day 2
-      let forecastMaxTemp2 = $("<p>").text(
-        Math.round(
-            ((response.list[11].main.temp_max - 273.15) * 9) / 5 + 32
-          ) +
-          " °F"
+      let forecastMaxTemp2 = $('<p>').text(
+        Math.round(((response.list[11].main.temp_max - 273.15) * 9) / 5 + 32) +
+          ' °F'
       );
 
-      let weatherIconDayTwo = $("<img>").attr('src',`${iconURL2}${response.list[11].weather[0].icon}@2x.png`);
+      let weatherIconDayTwo = $('<img>').attr(
+        'src',
+        `${iconURL2}${response.list[11].weather[0].icon}@2x.png`
+      );
 
       // Day 3
-      let forecastMaxTemp3 = $("<p>").text(
-        Math.round(
-            ((response.list[19].main.temp_max - 273.15) * 9) / 5 + 32
-          ) +
-          " °F"
+      let forecastMaxTemp3 = $('<p>').text(
+        Math.round(((response.list[19].main.temp_max - 273.15) * 9) / 5 + 32) +
+          ' °F'
       );
 
-      let weatherIconDayThree = $("<img>").attr('src',`${iconURL2}${response.list[19].weather[0].icon}@2x.png`);
+      let weatherIconDayThree = $('<img>').attr(
+        'src',
+        `${iconURL2}${response.list[19].weather[0].icon}@2x.png`
+      );
 
       // Day 4
-      let forecastMaxTemp4 = $("<p>").text(
-        Math.round(
-            ((response.list[27].main.temp_max - 273.15) * 9) / 5 + 32
-          ) +
-          " °F"
+      let forecastMaxTemp4 = $('<p>').text(
+        Math.round(((response.list[27].main.temp_max - 273.15) * 9) / 5 + 32) +
+          ' °F'
       );
 
-      let weatherIconDayFour = $("<img>").attr('src',`${iconURL2}${response.list[27].weather[0].icon}@2x.png`);
+      let weatherIconDayFour = $('<img>').attr(
+        'src',
+        `${iconURL2}${response.list[27].weather[0].icon}@2x.png`
+      );
 
       // Day 5
-      let forecastMaxTemp5 = $("<p>").text(
-        Math.round(
-            ((response.list[35].main.temp_max - 273.15) * 9) / 5 + 32
-          ) +
-          " °F"
+      let forecastMaxTemp5 = $('<p>').text(
+        Math.round(((response.list[35].main.temp_max - 273.15) * 9) / 5 + 32) +
+          ' °F'
       );
 
-      let weatherIconDayFive = $("<img>").attr('src',`${iconURL2}${response.list[35].weather[0].icon}@2x.png`);
+      let weatherIconDayFive = $('<img>').attr(
+        'src',
+        `${iconURL2}${response.list[35].weather[0].icon}@2x.png`
+      );
 
       const forecastObj = {
         dayOneMax: forecastMaxTemp1,
@@ -225,12 +253,10 @@ $.ajax({
       };
 
       clear(Object.keys(forecastObj));
-      writeHTML(forecastObj, "append");
+      writeHTML(forecastObj, 'append');
     })
 
     .catch(function (err) {
       console.log(err);
     });
 });
-
-

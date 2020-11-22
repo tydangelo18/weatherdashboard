@@ -1,7 +1,7 @@
 html,
 body {
   line-height: 1.25;
-  background-image: linear-gradient(120deg, #4a4a4a, #939393);
+  background-image: linear-gradient(120deg, #2a2139, #495495);
   margin: 0;
   padding: 0;
   height: 100%;
@@ -10,7 +10,7 @@ body {
 #titleDiv {
   display: flex;
   justify-content: center;
-  color: white;
+  color: #fede5d;
   font-family: 'Baloo Tamma 2', cursive;
   font-size: 55px;
 }
@@ -20,14 +20,22 @@ body {
   position: relative;
   animation-name: title;
   animation-duration: 2s;
-  animation-delay: .5s;
+  animation-delay: 0.5s;
   animation-fill-mode: forwards;
 }
 
 @keyframes title {
-  0% {opacity: 0;}
-  50% {opacity: .5; font-size: 75px;}
-  100% {opacity: 1; font-size: 55px;}
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+    font-size: 75px;
+  }
+  100% {
+    opacity: 1;
+    font-size: 55px;
+  }
 }
 
 #searchBar {
@@ -45,8 +53,12 @@ body {
 }
 
 @keyframes searchBar {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 #city {
@@ -56,7 +68,7 @@ body {
   padding-bottom: 0rem;
   font-family: 'Baloo Tamma 2', cursive;
   font-size: 40px;
-  color: white;
+  color: #ff7edb;
   opacity: 0;
 }
 
@@ -76,8 +88,12 @@ body {
 }
 
 @keyframes mainIcon {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 #misc {
@@ -85,12 +101,11 @@ body {
   padding-bottom: 0rem;
   font-family: 'Baloo Tamma 2', cursive;
   font-size: 25px;
-  color: white;
+  color: #ff7edb;
   opacity: 0;
   display: flex;
   justify-content: center;
 }
-
 
 #temp {
   opacity: 0;
@@ -100,7 +115,7 @@ body {
   padding-bottom: 0rem;
   font-family: 'Baloo Tamma 2', cursive;
   font-size: 90px;
-  color: white;
+  color: #36f9f6;
 }
 
 #humid {
@@ -108,25 +123,31 @@ body {
   font-size: 25px;
   display: flex;
   justify-content: center;
-  color: white;
+  color: #ff7edb;
   opacity: 0;
 }
 
-#dayOne, #dayTwo, #dayThree, #dayFour, #dayFive {
+#dayOne,
+#dayTwo,
+#dayThree,
+#dayFour,
+#dayFive {
   display: flex;
   flex-direction: column;
   align-items: center;
   font-weight: 900;
   line-height: 2.25;
   opacity: 0;
-  color: white;
+  color: #fede5d;
 }
 
-
-#dayOneDate, #dayTwoDate, #dayThreeDate, #dayFourDate, #dayFiveDate, #daySixDate {
+#dayOneDate,
+#dayTwoDate,
+#dayThreeDate,
+#dayFourDate,
+#dayFiveDate,
+#daySixDate {
   padding: 5px;
   font-size: 25px;
-  color: white;
+  color: #fede5d;
 }
-
-

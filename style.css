@@ -151,3 +151,41 @@ body {
   font-size: 25px;
   color: #fede5d;
 }
+
+/* Media Queries */
+@media screen and (max-width: 600px) {
+  @keyframes title {
+    0% {
+      opacity: 0;
+      font-size: 40px;
+    }
+    50% {
+      opacity: 0.5;
+      font-size: 40px;
+    }
+    100% {
+      opacity: 1;
+      font-size: 40px;
+    }
+  }
+
+  #city {
+    font-size: 25px;
+  }
+
+  #humid {
+    font-size: 12px;
+  }
+
+  #misc {
+    font-size: 12px;
+  }
+
+  #temp {
+    font-size: 60px;
+  }
+
+  .columns.is-mobile {
+    padding: 5px;
+  }
+}

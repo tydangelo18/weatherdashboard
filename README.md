@@ -27,4 +27,10 @@ Tyler D'Angelo
 
 ### Preview
 
+#### Desktop
+
 <img width="1215" alt="Screen Shot 2020-11-24 at 3 47 29 PM" src="https://user-images.githubusercontent.com/60044459/100160230-66255380-2e6c-11eb-97c3-deec79f61094.png">
+
+#### Mobile
+
+![WeatherDashboardMobile](https://user-images.githubusercontent.com/60044459/100523232-214f3480-316c-11eb-916b-2c4a858b9748.png)

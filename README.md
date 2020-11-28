@@ -33,4 +33,4 @@ Tyler D'Angelo
 
 #### Mobile
 
-![IMG_3716](https://user-images.githubusercontent.com/60044459/100523329-fb765f80-316c-11eb-8f52-5d6ed8ca2187.PNG)
+<img width="444" alt="Screen Shot 2020-11-28 at 11 28 40 AM" src="https://user-images.githubusercontent.com/60044459/100523352-2e205800-316d-11eb-9b7e-866a53469d68.png">

@@ -171,14 +171,17 @@ body {
 
   #city {
     font-size: 25px;
+    padding-top: 25px;
   }
 
   #humid {
     font-size: 12px;
+    padding-top: 31px;
   }
 
   #misc {
     font-size: 12px;
+    margin-top: -45px;
   }
 
   #temp {
